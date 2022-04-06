@@ -24,6 +24,7 @@ class ListAdapter(val pokemonClick: (Int) -> Unit): RecyclerView.Adapter<ListAda
         return pokemonList.size
     }
 
+    //binding para mostrar el nombre
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
         val pokemon = pokemonList[position]
         holder.itemView.pokemonText.text = "${pokemon.name}"

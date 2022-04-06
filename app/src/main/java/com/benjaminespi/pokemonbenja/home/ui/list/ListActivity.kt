@@ -23,6 +23,7 @@ class ListActivity : AppCompatActivity() {
 
         initUI()
     }
+    //metodo para iniciar el ui
     private fun initUI(){
         binding.listRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.listRecyclerView.adapter = ListAdapter{

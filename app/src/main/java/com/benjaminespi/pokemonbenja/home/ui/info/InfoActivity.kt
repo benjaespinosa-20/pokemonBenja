@@ -41,7 +41,7 @@ class InfoActivity : AppCompatActivity() {
     private fun startAbilActivity(){
         binding.abilbutton.setOnClickListener {
             val intent = Intent(this, AbilActivity::class.java)
-            //intent.putExtra("id", it)
+            //intent.putExtra(AbilActivity.IDPOKE, vi)
             startActivity(intent)
         }
     }

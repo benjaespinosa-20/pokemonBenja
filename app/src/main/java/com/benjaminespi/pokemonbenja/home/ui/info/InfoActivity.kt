@@ -1,10 +1,13 @@
 package com.benjaminespi.pokemonbenja.home.ui.info
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.benjaminespi.pokemonbenja.databinding.ActivityInfoBinding
+import com.benjaminespi.pokemonbenja.home.ui.abil.AbilActivity
+import com.benjaminespi.pokemonbenja.home.ui.evol.EvolActivity
 import com.bumptech.glide.Glide
 
 class InfoActivity : AppCompatActivity() {
@@ -19,6 +22,8 @@ class InfoActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(InfoViewModel::class.java)
 
         initUI()
+        startAbilActivity()
+        startEvolActivity()
     }
     private fun initUI(){
         val id = intent.extras?.get("id") as Int
@@ -32,5 +37,19 @@ class InfoActivity : AppCompatActivity() {
 
             Glide.with(this).load(pokemon.sprites.frontDefault).into(binding.imageView)
         })
+    }
+    private fun startAbilActivity(){
+        binding.abilbutton.setOnClickListener {
+            val intent = Intent(this, AbilActivity::class.java)
+            //intent.putExtra("id", it)
+            startActivity(intent)
+        }
+    }
+    private fun startEvolActivity(){
+        binding.evolbutton.setOnClickListener {
+            val intent = Intent(this, EvolActivity::class.java)
+            //intent.putExtra("id", it)
+            startActivity(intent)
+        }
     }
 }
